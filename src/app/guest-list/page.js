@@ -1,6 +1,7 @@
 import { getGuests } from "@/app/api/database";
 import GuestTable from "@/components/GuestTable";
 
+export const dynamic = "force-dynamic";
 
 export default async function GuestList() {
   const guests = await getGuests();

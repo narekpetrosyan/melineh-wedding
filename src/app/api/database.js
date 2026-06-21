@@ -1,14 +1,17 @@
+import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
 import "dotenv/config";
 import path from "path";
-import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
 import { PrismaClient } from "../../generated/prisma/client";
 
 const globalForPrisma = globalThis;
 
+function getDatabaseUrl() {
+  return `file:${path.join(process.cwd(), "guests.db")}`;
+}
+
 function createPrismaClient() {
-  const dbPath = path.join(process.cwd(), "guests.db");
   const adapter = new PrismaBetterSqlite3({
-    url: process.env.DATABASE_URL ?? `file:${dbPath}`,
+    url: getDatabaseUrl(),
   });
 
   return new PrismaClient({ adapter });
