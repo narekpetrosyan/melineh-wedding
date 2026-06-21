@@ -20,6 +20,11 @@
 # production
 /build
 
+# database
+/guests.db
+/guests.db-journal
+/src/generated/prisma
+
 # misc
 .DS_Store
 *.pem

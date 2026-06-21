@@ -1,19 +1,9 @@
-import { db } from "./database.js";
+import "dotenv/config";
+import { execSync } from "child_process";
 
-export const deleteTable = () => {
-  db.serialize(() => {
-   db.run(
-    `
-      DROP TABLE IF EXISTS guests;
-    `,
-    (err) => {
-     if (err) {
-      console.error(err.message);
-     }
-     console.log("guests table deleted successfully.");
-    }
-   );
-  });
-}
+execSync("npx prisma db execute --stdin", {
+  input: "DROP TABLE IF EXISTS guests;",
+  stdio: ["pipe", "inherit", "inherit"],
+});
 
-deleteTable();
+console.log("guests table deleted successfully.");

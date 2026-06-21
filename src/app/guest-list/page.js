@@ -1,12 +1,5 @@
+import { getGuests } from "@/app/api/database";
 import GuestTable from "@/components/GuestTable";
-
-async function getGuests() {
-  const res = await fetch('/api/guests', {
-    cache: 'no-store',
-  });
-
-  return res.json();
-}
 
 
 export default async function GuestList() {

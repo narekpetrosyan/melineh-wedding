@@ -1,40 +1,39 @@
+import "dotenv/config";
 import path from "path";
-import sqlite3 from "sqlite3";
+import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
+import { PrismaClient } from "../../generated/prisma/client";
 
-const dbPath = path.join(process.cwd(), "guests.db");
+const globalForPrisma = globalThis;
 
-export const db = new sqlite3.Database(
- dbPath,
- sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE,
- (err) => {
-  if (err) {
-   console.error(err.message);
-  }
-  console.log("Connected to the database.");
- }
-);
-
-
-export const apiGet = async (query) => {
- return await new Promise((resolve, reject) => {
-  db.all(query, (err, row) => {
-   if (err) {
-    console.log(err);
-    return reject(err);
-   }
-   return resolve(row);
+function createPrismaClient() {
+  const dbPath = path.join(process.cwd(), "guests.db");
+  const adapter = new PrismaBetterSqlite3({
+    url: process.env.DATABASE_URL ?? `file:${dbPath}`,
   });
- });
-};
 
-export const apiPost = async (query, values) => {
- return await new Promise((resolve, reject) => {
-  db.run(query, values, function (err) {
-   if (err) {
-    console.log(err);
-    reject(err);
-   }
-   resolve(null);
+  return new PrismaClient({ adapter });
+}
+
+export const prisma = globalForPrisma.prisma ?? createPrismaClient();
+
+if (process.env.NODE_ENV !== "production") {
+  globalForPrisma.prisma = prisma;
+}
+
+export async function getGuests() {
+  return prisma.guest.findMany({
+    orderBy: { id: "asc" },
   });
- });
-};
+}
+
+export async function createGuest({ name, count, wish }) {
+  return prisma.guest.create({
+    data: { name, count, wish },
+  });
+}
+
+export async function deleteGuest(id) {
+  return prisma.guest.delete({
+    where: { id: Number(id) },
+  });
+}
