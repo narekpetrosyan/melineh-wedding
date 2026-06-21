@@ -1,7 +1,7 @@
 import GuestTable from "@/components/GuestTable";
 
 async function getGuests() {
-  const res = await fetch('http://localhost:3000/api/guests', {
+  const res = await fetch('/api/guests', {
     cache: 'no-store',
   });
 
