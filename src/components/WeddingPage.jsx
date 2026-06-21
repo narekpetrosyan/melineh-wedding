@@ -24,11 +24,12 @@ export default function WeddingPage() {
         <div className="slider_area_inner slider_bg_1 overlay2">
           <div className="slider_text text-center">
             <div className="text_inner">
+              <MusicPlayer />
               <Image
                 src="/img/banner/ornaments.png"
                 alt=""
-                width={300}
-                height={80}
+                width={80}
+                height={20}
                 priority
               />
               <div>
@@ -43,7 +44,6 @@ export default function WeddingPage() {
                 </h3>
               </div>
               <span style={{ textShadow }}>06 Սեպտեմբեր 2025</span>
-              <MusicPlayer />
             </div>
           </div>
         </div>
@@ -73,7 +73,7 @@ export default function WeddingPage() {
                 <Image
                   src="/img/banner/flowers.png"
                   alt=""
-                  width={120}
+                  width={180}
                   height={60}
                 />
                 <span>06 Սեպտեմբեր 2025</span>
@@ -99,7 +99,7 @@ export default function WeddingPage() {
                 <Image
                   src="/img/banner/flowers.png"
                   alt=""
-                  width={120}
+                  width={180}
                   height={60}
                 />
               </div>
@@ -146,7 +146,7 @@ export default function WeddingPage() {
                 <Image
                   src="/img/banner/flowers.png"
                   alt=""
-                  width={120}
+                  width={180}
                   height={60}
                 />
                 <h3>Օրվա ծրագիր</h3>
@@ -162,8 +162,8 @@ export default function WeddingPage() {
                   <Image
                     src="/img/program_details/ornaments.png"
                     alt=""
-                    width={120}
-                    height={40}
+                    width={100}
+                    height={30}
                   />
                   <div style={{ marginTop: 10 }}>
                     <a
@@ -186,8 +186,8 @@ export default function WeddingPage() {
                   <Image
                     src="/img/program_details/ornaments.png"
                     alt=""
-                    width={120}
-                    height={40}
+                    width={100}
+                    height={30}
                   />
                   <div style={{ marginTop: 10 }}>
                     <a
