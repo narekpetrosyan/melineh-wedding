@@ -1,42 +1,23 @@
-import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
+import { db } from "@/db";
+import { guests } from "@/db/schema";
 import "dotenv/config";
-import path from "path";
-import { PrismaClient } from "../../generated/prisma/client";
-
-const globalForPrisma = globalThis;
-
-function getDatabaseUrl() {
-  return `file:${path.join(process.cwd(), "guests.db")}`;
-}
-
-function createPrismaClient() {
-  const adapter = new PrismaBetterSqlite3({
-    url: getDatabaseUrl(),
-  });
-
-  return new PrismaClient({ adapter });
-}
-
-export const prisma = globalForPrisma.prisma ?? createPrismaClient();
-
-if (process.env.NODE_ENV !== "production") {
-  globalForPrisma.prisma = prisma;
-}
+import { asc, eq } from "drizzle-orm";
 
 export async function getGuests() {
-  return prisma.guest.findMany({
-    orderBy: { id: "asc" },
-  });
+  return db.select().from(guests).orderBy(asc(guests.id));
 }
 
 export async function createGuest({ name, count, wish }) {
-  return prisma.guest.create({
-    data: { name, count, wish },
-  });
+  console.log({name, count, wish});
+
+  const [created] = await db
+    .insert(guests)
+    .values({ name, count, wish })
+    .returning();
+
+  return created;
 }
 
 export async function deleteGuest(id) {
-  return prisma.guest.delete({
-    where: { id: Number(id) },
-  });
+  return db.delete(guests).where(eq(guests.id, Number(id)));
 }

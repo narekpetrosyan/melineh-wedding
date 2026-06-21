@@ -23,9 +23,7 @@ export default function FormPart() {
       newErrors.name = "Name is required";
     }
 
-    if (!form.wish.trim()) {
-      newErrors.wish = "Wish is required";
-    } else if (form.wish.length > 100) {
+    if (form.wish.length > 100) {
       newErrors.wish = "Wish must be at maximum 100 characters";
     }
 
