@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "drizzle-kit generate && next build",
-    "build:local": "npm run db:migrate && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "postinstall": "drizzle-kit generate",
