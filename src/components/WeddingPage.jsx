@@ -53,16 +53,16 @@ export default function WeddingPage() {
           <Image
             src="/img/banner/flower-top.png"
             alt=""
-            width={200}
-            height={120}
+            width={384}
+            height={228}
           />
         </div>
         <div className="flowaers_bottom d-none d-lg-block">
           <Image
             src="/img/banner/flower-bottom.png"
             alt=""
-            width={200}
-            height={120}
+            width={350}
+            height={346}
           />
         </div>
         <div className="container">
