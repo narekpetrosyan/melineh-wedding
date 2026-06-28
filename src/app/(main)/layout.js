@@ -4,10 +4,10 @@ export const metadata = {
   openGraph: {
     title: "Charles & Meline ♥️ Invitation de mariage",
     type: "website",
-    url: "https://wedding-flame-gamma.vercel.app/",
+    url: "https://wedding-swart-rho.vercel.app/",
     images: [
       {
-        url: "https://wedding-flame-gamma.vercel.app/img/banner/og_banner.jpg",
+        url: "https://wedding-swart-rho.vercel.app/img/banner/og_banner.jpg",
       },
     ],
   },
