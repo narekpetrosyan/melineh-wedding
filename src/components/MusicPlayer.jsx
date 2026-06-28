@@ -33,7 +33,7 @@ export default function MusicPlayer() {
           id="play_music"
           type="button"
           onClick={togglePlayback}
-          aria-label={isPlaying ? "Pause music" : "Play music"}
+          aria-label={isPlaying ? "Pause" : "Jouer"}
           style={{
             cursor: "pointer",
             width: 50,
@@ -41,7 +41,7 @@ export default function MusicPlayer() {
             borderRadius: "50%",
             outline: "none",
             border: "1px solid white",
-            backgroundColor: "#C78665",
+            backgroundColor: "#e1645b",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",

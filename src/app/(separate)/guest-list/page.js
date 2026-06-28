@@ -13,7 +13,7 @@ export default async function GuestList() {
       <div className="w-full max-w-5xl bg-white shadow-lg rounded-xl overflow-hidden">
 
         <div className="px-6 py-4 border-b">
-          <h2 className="text-xl font-semibold text-gray-800">Հյուրերի ցանկ</h2>
+          <h2 className="text-xl font-semibold text-gray-800">Liste des invités</h2>
         </div>
 
         <GuestTable guests={guests} />

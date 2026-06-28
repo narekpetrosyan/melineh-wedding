@@ -8,8 +8,6 @@ export async function getGuests() {
 }
 
 export async function createGuest({ name, count, wish }) {
-  console.log({name, count, wish});
-
   const [created] = await db
     .insert(guests)
     .values({ name, count, wish })

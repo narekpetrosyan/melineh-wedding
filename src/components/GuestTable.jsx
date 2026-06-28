@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/table";
 
 import { useState } from "react";
+import { Tip } from "./ui/tip";
 
 export default function GuestTable({ guests }) {
   const [data, setData] = useState(guests);
@@ -33,9 +34,9 @@ export default function GuestTable({ guests }) {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Անուն</TableHead>
-            <TableHead>Հյուրերի քանակ</TableHead>
-            <TableHead>Բարեմաղթանք</TableHead>
+            <TableHead>Votre nom</TableHead>
+            <TableHead>Nombre d'invités</TableHead>
+            <TableHead>Commentaires</TableHead>
             <TableHead className="text-right">_</TableHead>
           </TableRow>
         </TableHeader>
@@ -45,7 +46,9 @@ export default function GuestTable({ guests }) {
             <TableRow key={g.id}>
               <TableCell className="font-medium">{g.name}</TableCell>
               <TableCell>{g.count}</TableCell>
-              <TableCell>{g.wish}</TableCell>
+              <TableCell>
+                <Tip content={g.wish}>{g.wish}</Tip>
+              </TableCell>
               <TableCell className="text-right">
                 <Button
                   variant="destructive"
@@ -59,8 +62,8 @@ export default function GuestTable({ guests }) {
         </TableBody>
         <TableFooter>
           <TableRow>
-            <TableCell colSpan={0}>Total</TableCell>
-            <TableCell>{totalGuests}</TableCell>
+            <TableCell colSpan={0}>Totale</TableCell>
+            <TableCell>{totalGuests} invitées</TableCell>
             <TableCell></TableCell>
             <TableCell></TableCell>
             <TableCell></TableCell>

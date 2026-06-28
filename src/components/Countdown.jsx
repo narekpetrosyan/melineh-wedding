@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const WEDDING_DATE = new Date("2026-09-06T00:00:00");
+const WEDDING_DATE = new Date("2026-09-05T00:00:00");
 
 function getTimeLeft() {
   const diff = WEDDING_DATE.getTime() - Date.now();
@@ -38,10 +38,10 @@ export default function Countdown() {
 
   return (
     <div className="countdown_wrap d-flex">
-      <CountdownUnit value={timeLeft.days} label="Days" />
-      <CountdownUnit value={timeLeft.hours} label="Hours" />
+      <CountdownUnit value={timeLeft.days} label="Jours" />
+      <CountdownUnit value={timeLeft.hours} label="Heures" />
       <CountdownUnit value={timeLeft.minutes} label="Minutes" />
-      <CountdownUnit value={timeLeft.seconds} label="Seconds" />
+      <CountdownUnit value={timeLeft.seconds} label="Secondes" />
     </div>
   );
 }

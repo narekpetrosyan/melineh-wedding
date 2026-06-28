@@ -20,11 +20,11 @@ export default function FormPart() {
     const newErrors = {};
 
     if (!form.name.trim()) {
-      newErrors.name = "Name is required";
+      newErrors.name = "Le nom est requis.";
     }
 
     if (form.wish.length > 100) {
-      newErrors.wish = "Wish must be at maximum 100 characters";
+      newErrors.wish = "Le souhait ne doit pas dépasser 100 caractères.";
     }
 
     setErrors(newErrors);
@@ -70,7 +70,7 @@ export default function FormPart() {
         <div className="popup_box">
           <div className="popup_inner">
             <div className="form_heading text-center">
-              <h3>Խնդրում ենք հաստատել Ձեր ներկայությունը</h3>
+              <h3>Merci de bien vouloir confirmer votre présence avant le 15 juillet et nous indiquer le nombre de personnes présentes en cliquant sur le lien ci-dessous:</h3>
             </div>
             <form onSubmit={handleSubmit}>
               <div className="row">
@@ -78,7 +78,7 @@ export default function FormPart() {
                   <input
                     type="text"
                     name="name"
-                    placeholder="Ձեր անունը"
+                    placeholder="Votre nom"
                     value={form.name}
                     onChange={handleChange}
                     style={{
@@ -107,11 +107,11 @@ export default function FormPart() {
                       marginBottom: "8px"
                     }}
                   >
-                    <option value="1">1 հյուր</option>
-                    <option value="2">2 հյուր</option>
-                    <option value="3">3 հյուր</option>
-                    <option value="4">4 հյուր</option>
-                    <option value="5">5 հյուր</option>
+                    <option value="1">1 invité/e</option>
+                    <option value="2">2 invité/e</option>
+                    <option value="3">3 invité/e</option>
+                    <option value="4">4 invité/e</option>
+                    <option value="5">5 invité/e</option>
                   </select>
                 </div>
                 <div className="col-xl-12">
@@ -119,7 +119,7 @@ export default function FormPart() {
                     name="wish"
                     value={form.wish}
                     onChange={handleChange}
-                    placeholder="Բարեմաղթանք"
+                    placeholder="Commentaires (restrictions alimentaires, nombre d’enfants, …)"
                     style={{
                       marginBottom: "8px",
                       ...(errors?.wish ? {
@@ -127,7 +127,7 @@ export default function FormPart() {
                       } : {})
                     }}
                   />
-                  {errors.name && <p style={{
+                  {errors.wish && <p style={{
                     fontSize: 12,
                     color: "red",
                     marginBottom: "4px",
@@ -136,7 +136,7 @@ export default function FormPart() {
                 </div>
                 <div className="col-xl-12">
                   <button type="submit" className="boxed_btn3" disabled={loading}>
-                    {loading ? "Sending..." : "Հաստատել"}
+                    {loading ? "Envoi..." : "Confirmer"}
                   </button>
                 </div>
               </div>

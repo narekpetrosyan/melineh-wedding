@@ -1,8 +1,8 @@
 export const metadata = {
-  title: "Նարեկ & Անժելիկա ♥️ Հարսանյաց հրավեր",
-  description: "Սիրով հրավիրում ենք ձեզ կիսելու մեզ հետ մեր կյանքի կարևոր ու հիշարժան օրը",
+  title: "Charles & Meline ♥️ Invitation de mariage",
+  description: "Nous vous invitons cordialement à partager avec nous cette journée importante et mémorable de notre vie.",
   openGraph: {
-    title: "Նարեկ & Անժելիկա ♥️ Հարսանյաց հրավեր",
+    title: "Charles & Meline ♥️ Invitation de mariage",
     type: "website",
     url: "https://wedding-flame-gamma.vercel.app/",
     images: [
@@ -17,7 +17,7 @@ export default function RootLayout({
   children,
 }) {
   return (
-    <html lang="hy">
+    <html lang="fr">
       <head>
         <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png" />
         <link rel="stylesheet" href="/css/bootstrap.min.css" />

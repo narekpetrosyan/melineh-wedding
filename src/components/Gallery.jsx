@@ -39,8 +39,8 @@ export default function Gallery() {
                 <Image
                   src="/img/banner/flowers.png"
                   alt=""
-                  width={180}
-                  height={60}
+                  width={200}
+                  height={50}
                 />
               </div>
             </div>

@@ -1,7 +1,6 @@
 import Countdown from "@/components/Countdown";
 import Gallery from "@/components/Gallery";
 import MusicPlayer from "@/components/MusicPlayer";
-import YandexMap from "@/components/YandexMap";
 import Image from "next/image";
 import FormPart from "./FormPart";
 
@@ -11,7 +10,7 @@ const textShadow =
 const mapButtonStyle = {
   padding: "8px 14px",
   borderRadius: 12,
-  backgroundColor: "#C78665",
+  backgroundColor: "#e1645b",
   color: "white",
   textDecoration: "none",
   display: "inline-block",
@@ -34,16 +33,16 @@ export default function WeddingPage() {
               />
               <div>
                 <h3 className="text_names" style={{ textShadow }}>
-                  Նարեկ
+                  Charles
                 </h3>
                 <h3 className="text_names" style={{ textShadow }}>
                   &
                 </h3>
                 <h3 className="text_names" style={{ textShadow }}>
-                  Անժելիկա
+                  Meline
                 </h3>
               </div>
-              <span style={{ textShadow }}>06 Սեպտեմբեր 2025</span>
+              <span style={{ textShadow }}>05 septembre 2026</span>
             </div>
           </div>
         </div>
@@ -73,11 +72,11 @@ export default function WeddingPage() {
                 <Image
                   src="/img/banner/flowers.png"
                   alt=""
-                  width={180}
-                  height={60}
+                  width={200}
+                  height={50}
                 />
-                <span>06 Սեպտեմբեր 2025</span>
-                <h3>Հարսանիքին մնաց</h3>
+                <span>05 septembre 2026</span>
+                <h3>Notre mariage aura lieu dans:</h3>
               </div>
             </div>
           </div>
@@ -99,8 +98,8 @@ export default function WeddingPage() {
                 <Image
                   src="/img/banner/flowers.png"
                   alt=""
-                  width={180}
-                  height={60}
+                  width={200}
+                  height={50}
                 />
               </div>
             </div>
@@ -110,9 +109,7 @@ export default function WeddingPage() {
           <div className="row">
             <div className="col-xl-12">
               <div className="section_title text-center">
-                <h3>ԸՆԿԵՐՆԵՐ</h3>
-                <h3>ԵՎ</h3>
-                <h3>ԲԱՐԵԿԱՄՆԵՐ</h3>
+                <h3>CHERS AMIS</h3>
               </div>
             </div>
           </div>
@@ -120,8 +117,17 @@ export default function WeddingPage() {
             <div className="col-xl-12">
               <div className="section_title text-center">
                 <span>
-                  Սիրով հրավիրում ենք ձեզ կիսելու մեզ հետ մեր կյանքի կարևոր ու
-                  հիշարժան օրը
+                  Après l’envoi de notre faire-part, il nous tarde désormais de partager avec vous les détails de notre mariage.
+                </span>
+              </div>
+              <div className="section_title text-center">
+                <span>
+                  Nous vous retrouverons le 5 septembre à 14h à la Mairie de Maisons-Alfort pour la cérémonie civile.
+                </span>
+              </div>
+              <div className="section_title text-center">
+                <span>
+                  Puis, à partir de 18h au Château du Breuil (Garancierères ), nous aurons le plaisir de vous accueillir pour poursuivre les festivités autour d’un cocktail, d’un repas et de moments que nous espérons inoubliables.
                 </span>
               </div>
             </div>
@@ -129,7 +135,7 @@ export default function WeddingPage() {
           <div className="row">
             <div className="col-xl-12">
               <div className="d-flex section_title section_title_waiting text-center align-items-center justify-content-center">
-                <span>Սպասում ենք ձեզ մեր հարսանիքին</span>
+                <span>Nous sommes très heureux de pouvoir partager cette journée avec vous.</span>
               </div>
             </div>
           </div>
@@ -137,74 +143,6 @@ export default function WeddingPage() {
       </div>
 
       <Gallery />
-
-      <div className="program_details_area">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-12">
-              <div className="section_title text-center">
-                <Image
-                  src="/img/banner/flowers.png"
-                  alt=""
-                  width={180}
-                  height={60}
-                />
-                <h3>Օրվա ծրագիր</h3>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-xl-6 col-lg-6">
-              <div className="single_program program_bg_1 text-center">
-                <div className="program_inner">
-                  <span>16.30</span>
-                  <h3>Սուրբ Մարիամ Աստվածածին եկեղեցի</h3>
-                  <Image
-                    src="/img/program_details/ornaments.png"
-                    alt=""
-                    width={100}
-                    height={30}
-                  />
-                  <div style={{ marginTop: 10 }}>
-                    <a
-                      href="https://yandex.com/maps/-/CHDqyOma"
-                      style={mapButtonStyle}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Ինչպես հասնել
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-6 col-lg-6">
-              <div className="single_program program_bg_3 text-center">
-                <div className="program_inner">
-                  <span>17:30</span>
-                  <h3>Ռեստորան Villa Hills</h3>
-                  <Image
-                    src="/img/program_details/ornaments.png"
-                    alt=""
-                    width={100}
-                    height={30}
-                  />
-                  <div style={{ marginTop: 10 }}>
-                    <a
-                      href="https://yandex.com/maps/-/CHDqEW8a"
-                      style={mapButtonStyle}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Ինչպես հասնել
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div className="attending_area">
         <div className="container">
@@ -233,32 +171,6 @@ export default function WeddingPage() {
           </div>
         </div>
       </div>
-
-      <section className="location_area">
-        <div className="d-none d-sm-block location_info">
-          <div className="location_inner">
-            <div className="location_top text-center">
-              <h3>Հասցե</h3>
-              <p>Կոտայքի մարզ, Գետամեջ համայնք</p>
-              <div style={{ marginTop: 10 }}>
-                <a
-                  href="https://yandex.com/maps/-/CHDqEW8a"
-                  style={mapButtonStyle}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Ինչպես հասնել
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="container-fluid p-0">
-          <div className="d-sm-block">
-            <YandexMap />
-          </div>
-        </div>
-      </section>
     </>
   );
 }
